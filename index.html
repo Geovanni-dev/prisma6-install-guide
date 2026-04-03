@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="Pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Prisma 6 — Configuração Completa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- ============================================ -->
+        <!-- CABEÇALHO DA PÁGINA - Título e descrição principal -->
+        <!-- ============================================ -->
+        <div class="header">
+            <h1>⚡ Prisma 6 — Configuração Completa</h1>
+            <p>Comandos para configurar o Prisma 6 com SQLite ou PostgreSQL</p>
+            <div class="badge">Prisma 6 | SQLite | PostgreSQL</div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- SEÇÃO SQLITE - Pra quem quer um banco local e leve -->
+        <!-- ============================================ -->
+        <div class="section-title">
+            <span class="db-badge sqlite-badge">SQLite</span> 📦 Instalação e Configuração
+        </div>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr><th style="width: 50px">#</th><th>Comando</th><th>Descrição</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td class="step">1</td><td><span class="command">npm install prisma@6 --save-dev</span></td><td class="description">Instala o Prisma CLI como dependência de desenvolvimento</td></tr>
+                    <tr><td class="step">2</td><td><span class="command">npm install @prisma/client@6</span></td><td class="description">Instala o Prisma Client para sua aplicação</td></tr>
+                    <tr><td class="step">3</td><td><span class="command">npx prisma init --datasource-provider sqlite</span></td><td class="description">Inicializa o Prisma com SQLite (cria pasta prisma/ e .env)</td></tr>
+                    <tr><td class="step">4</td><td><span class="command">npx prisma migrate dev --name init</span></td><td class="description">Cria a primeira migração e gera o cliente</td></tr>
+                    <tr style="border-bottom: 2px solid #f59e0b;">
+                        <td class="step">5</td>
+                        <td><span class="command-warning">npx prisma generate --schema=prisma/schema.prisma</span></td>
+                        <td class="description"><strong style="color:#f59e0b;">⚠️ FORÇA O PRISMA 6</strong> — Gera o cliente forçando o schema do Prisma 6</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- SEÇÃO POSTGRESQL - Pra quem precisa de um banco robusto -->
+        <!-- ============================================ -->
+        <div class="section-title">
+            <span class="db-badge postgres-badge">PostgreSQL</span> 🐘 Instalação e Configuração
+        </div>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr><th style="width: 50px">#</th><th>Comando</th><th>Descrição</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td class="step">1</td><td><span class="command-postgres">npm install prisma@6 --save-dev</span></td><td class="description">Instala o Prisma CLI como dependência de desenvolvimento</td></tr>
+                    <tr><td class="step">2</td><td><span class="command-postgres">npm install @prisma/client@6</span></td><td class="description">Instala o Prisma Client para sua aplicação</td></tr>
+                    <tr><td class="step">3</td><td><span class="command-postgres">npx prisma init --datasource-provider postgresql</span></td><td class="description">Inicializa o Prisma com PostgreSQL (cria pasta prisma/ e .env)</td></tr>
+                    <tr><td class="step">4</td><td><span class="command-postgres">npx prisma migrate dev --name init</span></td><td class="description">Cria a primeira migração e gera o cliente</td></tr>
+                    <tr style="border-bottom: 2px solid #f59e0b;">
+                        <td class="step">5</td>
+                        <td><span class="command-warning">npx prisma generate --schema=prisma/schema.prisma</span></td>
+                        <td class="description"><strong style="color:#f59e0b;">⚠️ FORÇA O PRISMA 6</strong> — Gera o cliente forçando o schema do Prisma 6</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- COMANDOS ÚTEIS - O que você vai usar no dia a dia -->
+        <!-- ============================================ -->
+        <div class="section-title">🔧 Comandos do Dia a Dia (Ambos Bancos)</div>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr><th>Comando</th><th>Quando usar</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><span class="command">npx prisma migrate dev --name nome</span></td><td class="description">Após alterar o schema (cria nova migração)</td></tr>
+                    <tr><td><span class="command">npx prisma generate</span></td><td class="description">Após instalar em outro ambiente ou atualizar o cliente</td></tr>
+                    <tr><td><span class="command">npx prisma db push</span></td><td class="description">Para desenvolvimento rápido (sem criar migrações)</td></tr>
+                    <tr><td><span class="command">npx prisma migrate reset</span></td><td class="description">Reseta o banco e aplica todas as migrações</td></tr>
+                    <tr><td><span class="command">npx prisma studio</span></td><td class="description">Abre interface visual do banco de dados</td></tr>
+                    <tr><td><span class="command">npx prisma validate</span></td><td class="description">Verifica se o schema está válido</td></tr>
+                    <tr><td><span class="command">npx prisma format</span></td><td class="description">Formata o arquivo schema.prisma</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- EXTENSÃO DO VS CODE - Pra não ter erro visual chato -->
+        <!-- ============================================ -->
+        <div class="section-title">⚙️ Configuração da Extensão VS Code</div>
+        <div class="table-wrapper">
+            <table class="extensions-table">
+                <thead>
+                    <tr><th style="width: 50px">#</th><th>Passo</th><th>Instrução</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td class="step">1</td><td>Abrir Command Palette</td><td><span class="command">Ctrl+Shift+P</span> ou <span class="command">Cmd+Shift+P</span></td></tr>
+                    <tr><td class="step">2</td><td>Digitar o comando</td><td><span class="command">"Pin to Prisma 6"</span></td></tr>
+                    <tr><td class="step">3</td><td>Executar</td><td>Pressionar Enter para fixar a extensão na versão 6</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- ESTRUTURA DE PASTAS - Onde cada coisa fica -->
+        <!-- ============================================ -->
+        <div class="section-title">📁 Estrutura de Pastas</div>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr><th>Arquivo/Pasta</th><th>Descrição</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><span class="command">prisma/schema.prisma</span></td><td class="description">Seu schema com os models</td></tr>
+                    <tr><td><span class="command">prisma/migrations/</span></td><td class="description">Histórico de migrações (criado automaticamente)</td></tr>
+                    <tr><td><span class="command">prisma/dev.db</span></td><td class="description">Arquivo do banco SQLite (criado automaticamente)</td></tr>
+                    <tr><td><span class="command">.env</span></td><td class="description">Variáveis de ambiente com a DATABASE_URL</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- EXEMPLO SQLITE - Modelo básico pra começar -->
+        <!-- ============================================ -->
+        <div class="section-title">
+            <span class="db-badge sqlite-badge">SQLite</span> 📝 Exemplo de schema.prisma
+        </div>
+        <pre>
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id    Int    @id @default(autoincrement())
+  email String @unique
+  name  String
+}
+        </pre>
+
+        <!-- ============================================ -->
+        <!-- EXEMPLO POSTGRESQL - Mesmo modelo, provider diferente -->
+        <!-- ============================================ -->
+        <div class="section-title">
+            <span class="db-badge postgres-badge">PostgreSQL</span> 📝 Exemplo de schema.prisma
+        </div>
+        <pre>
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id    Int    @id @default(autoincrement())
+  email String @unique
+  name  String
+}
+        </pre>
+
+        <!-- ============================================ -->
+        <!-- CONFIGURAÇÃO DO .ENV  -->
+        <!-- ============================================ -->
+        <div class="section-title">🔐 Exemplo de arquivo .env</div>
+        <pre>
+<span style="color:#10b981;"># SQLite - Banco local, sem instalação</span>
+DATABASE_URL="file:./prisma/dev.db"
+
+<span style="color:#3b82f6;"># PostgreSQL - Banco robusto pra produção</span>
+DATABASE_URL="postgresql://usuario:senha@localhost:5432/nome_do_banco"
+        </pre>
+
+        <!-- ============================================ -->
+        <!-- RODAPÉ - Créditos e mensagem final -->
+        <!-- ============================================ -->
+        <div class="footer">
+            Prisma 6 | SQLite & PostgreSQL | Configuração profissional para projetos Node.js<br><br>
+            © 2026 Geovani Rodrigues
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,426 @@
+/* ============================================ */
+/* RESET CSS - Remove estilos padrão do navegador */
+/* ============================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ============================================ */
+/* CORPO DO SITE - Fundo gradiente e centralização */
+/* ============================================ */
+body {
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+    font-family: 'Segoe UI', 'SF Mono', 'Fira Code', monospace;
+    padding: 40px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ============================================ */
+/* RESPONSIVIDADE - Ajustes para tablets */
+/* ============================================ */
+@media (max-width: 768px) {
+    body {
+        padding: 20px;
+    }
+}
+
+/* ============================================ */
+/* RESPONSIVIDADE - Ajustes para celulares */
+/* ============================================ */
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+}
+
+/* ============================================ */
+/* CONTAINER PRINCIPAL - Card que envolve todo o conteúdo */
+/* ============================================ */
+.container {
+    max-width: 1200px;
+    width: 100%;
+    background: #0f0f13;
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+/* ============================================ */
+/* RESPONSIVIDADE - Container em tablets */
+/* ============================================ */
+@media (max-width: 768px) {
+    .container {
+        padding: 16px;
+        border-radius: 16px;
+    }
+}
+
+/* ============================================ */
+/* RESPONSIVIDADE - Container em celulares */
+/* ============================================ */
+@media (max-width: 480px) {
+    .container {
+        padding: 12px;
+        border-radius: 12px;
+    }
+}
+
+/* ============================================ */
+/* CABEÇALHO - Título e descrição da página */
+/* ============================================ */
+.header {
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.header h1 {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+/* ============================================ */
+/* RESPONSIVIDADE - Título em tablets */
+/* ============================================ */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 1.3rem;
+    }
+}
+
+/* ============================================ */
+/* RESPONSIVIDADE - Título em celulares */
+/* ============================================ */
+@media (max-width: 480px) {
+    .header h1 {
+        font-size: 1.1rem;
+    }
+}
+
+.header p {
+    color: #888;
+    font-size: 0.875rem;
+}
+
+/* ============================================ */
+/* RESPONSIVIDADE - Descrição em celulares */
+/* ============================================ */
+@media (max-width: 480px) {
+    .header p {
+        font-size: 0.75rem;
+    }
+}
+
+/* ============================================ */
+/* BADGE - Selo de informações do guia */
+/* ============================================ */
+.badge {
+    display: inline-block;
+    background: #7c3aed20;
+    color: #a78bfa;
+    padding: 4px 12px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    margin-top: 8px;
+    border: 1px solid #7c3aed40;
+}
+
+/* ============================================ */
+/* BADGES DOS BANCOS - SQLite e PostgreSQL */
+/* ============================================ */
+.db-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    margin-right: 8px;
+}
+
+.sqlite-badge {
+    background: #10b98120;
+    color: #10b981;
+    border: 1px solid #10b98130;
+}
+
+.postgres-badge {
+    background: #3b82f620;
+    color: #3b82f6;
+    border: 1px solid #3b82f630;
+}
+
+/* ============================================ */
+/* WRAPPER DA TABELA - Permite scroll horizontal no mobile */
+/* ============================================ */
+.table-wrapper {
+    overflow-x: auto;
+    margin: 16px 0;
+    border-radius: 12px;
+}
+
+/* ============================================ */
+/* RESPONSIVIDADE - Scroll suave no iOS */
+/* ============================================ */
+@media (max-width: 640px) {
+    .table-wrapper {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+/* ============================================ */
+/* TABELAS - Estilização principal */
+/* ============================================ */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 500px;
+}
+
+/* ============================================ */
+/* RESPONSIVIDADE - Largura mínima menor em celulares */
+/* ============================================ */
+@media (max-width: 480px) {
+    table {
+        min-width: 400px;
+    }
+}
+
+/* ============================================ */
+/* CABEÇALHO DA TABELA - Th */
+/* ============================================ */
+th {
+    text-align: left;
+    padding: 16px 12px;
+    background: #1a1a24;
+    color: #e2e8f0;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid #7c3aed;
+}
+
+/* ============================================ */
+/* RESPONSIVIDADE - Células de cabeçalho em tablets */
+/* ============================================ */
+@media (max-width: 768px) {
+    th {
+        padding: 12px 8px;
+        font-size: 0.7rem;
+    }
+}
+
+/* ============================================ */
+/* CÉLULAS DA TABELA - Td */
+/* ============================================ */
+td {
+    padding: 14px 12px;
+    color: #cbd5e1;
+    font-size: 0.85rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    font-family: 'SF Mono', 'Fira Code', monospace;
+}
+
+/* ============================================ */
+/* RESPONSIVIDADE - Células em tablets */
+/* ============================================ */
+@media (max-width: 768px) {
+    td {
+        padding: 10px 8px;
+        font-size: 0.75rem;
+    }
+}
+
+/* ============================================ */
+/* EFEITO HOVER - Linha da tabela ao passar o mouse */
+/* ============================================ */
+tr:hover td {
+    background: rgba(124, 58, 237, 0.1);
+}
+
+/* ============================================ */
+/* COMANDOS SQLITE - Estilo verde */
+/* ============================================ */
+.command {
+    background: #0a0a0f;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 0.8rem;
+    color: #10b981;
+    border-left: 3px solid #10b981;
+    display: inline-block;
+    word-break: break-word;
+    white-space: normal;
+}
+
+/* ============================================ */
+/* COMANDOS POSTGRESQL - Estilo azul */
+/* ============================================ */
+.command-postgres {
+    background: #0a0a0f;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 0.8rem;
+    color: #3b82f6;
+    border-left: 3px solid #3b82f6;
+    display: inline-block;
+    word-break: break-word;
+    white-space: normal;
+}
+
+/* ============================================ */
+/* COMANDOS DE ALERTA - Estilo laranja (Força Prisma 6) */
+/* ============================================ */
+.command-warning {
+    background: #0a0a0f;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 0.8rem;
+    color: #f59e0b;
+    border-left: 3px solid #f59e0b;
+    display: inline-block;
+    word-break: break-word;
+    white-space: normal;
+}
+
+/* ============================================ */
+/* RESPONSIVIDADE - Comandos em celulares */
+/* ============================================ */
+@media (max-width: 480px) {
+    .command, .command-postgres, .command-warning {
+        font-size: 0.7rem;
+        padding: 4px 8px;
+    }
+}
+
+/* ============================================ */
+/* DESCRIÇÃO DAS TABELAS - Texto secundário */
+/* ============================================ */
+.description {
+    color: #94a3b8;
+}
+
+/* ============================================ */
+/* NÚMERO DO PASSO - Destaque roxo */
+/* ============================================ */
+.step {
+    color: #7c3aed;
+    font-weight: 600;
+    width: 50px;
+}
+
+/* ============================================ */
+/* TÍTULO DAS SEÇÕES - Com borda roxa à esquerda */
+/* ============================================ */
+.section-title {
+    color: #a78bfa;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 24px 0 16px 0;
+    padding-left: 8px;
+    border-left: 3px solid #7c3aed;
+}
+
+/* ============================================ */
+/* RESPONSIVIDADE - Títulos de seção em tablets */
+/* ============================================ */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 1rem;
+        margin: 20px 0 12px 0;
+    }
+}
+
+/* ============================================ */
+/* RESPONSIVIDADE - Títulos de seção em celulares */
+/* ============================================ */
+@media (max-width: 480px) {
+    .section-title {
+        font-size: 0.9rem;
+    }
+}
+
+/* ============================================ */
+/* PRIMEIRO TÍTULO - Remove margem superior */
+/* ============================================ */
+.section-title:first-of-type {
+    margin-top: 0;
+}
+
+/* ============================================ */
+/* TABELA DE EXTENSÕES - Ajuste para alinhamento vertical */
+/* ============================================ */
+.extensions-table td {
+    vertical-align: middle;
+}
+
+.extensions-table .command {
+    white-space: nowrap;
+}
+
+/* ============================================ */
+/* RESPONSIVIDADE - Quebra linha na tabela de extensões */
+/* ============================================ */
+@media (max-width: 480px) {
+    .extensions-table .command {
+        white-space: normal;
+    }
+}
+
+/* ============================================ */
+/* RODAPÉ - Créditos e informações finais */
+/* ============================================ */
+.footer {
+    margin-top: 24px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    text-align: center;
+    color: #666;
+    font-size: 0.75rem;
+}
+
+/* ============================================ */
+/* RESPONSIVIDADE - Rodapé em celulares */
+/* ============================================ */
+@media (max-width: 480px) {
+    .footer {
+        font-size: 0.65rem;
+    }
+}
+
+/* ============================================ */
+/* BLOCO DE CÓDIGO - Exemplos de schema.prisma e .env */
+/* ============================================ */
+pre, .code-block {
+    background: #0a0a0f;
+    padding: 16px;
+    border-radius: 12px;
+    overflow-x: auto;
+    font-size: 0.8rem;
+    color: #cbd5e1;
+    font-family: monospace;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+/* ============================================ */
+/* RESPONSIVIDADE - Bloco de código em celulares */
+/* ============================================ */
+@media (max-width: 480px) {
+    pre, .code-block {
+        padding: 10px;
+        font-size: 0.7rem;
+    }
+}
